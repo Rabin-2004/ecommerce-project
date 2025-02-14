@@ -76,10 +76,10 @@ const Navbar = () => {
                 <ListItem button component={Link} to="/cart" onClick={toggleDrawer}>
                     <ListItemText primary="Cart" />
                     <IconButton color="inherit" component={Link} to="/cart">
-                                <Badge badgeContent={cartItems.length} color="error">
-                                <ShoppingCartIcon />
-                                </Badge>
-                            </IconButton>
+                        <Badge badgeContent={cartItems.length} color="error">
+                            <ShoppingCartIcon />
+                        </Badge>
+                    </IconButton>
                 </ListItem>
             </List>
         </Drawer>
@@ -89,7 +89,10 @@ const Navbar = () => {
         <>
             <AppBar position="static">
                 <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <Typography variant="h6">All in One Store</Typography>
+                    {/* Make the site title clickable and navigate to home */}
+                    <Typography variant="h6" component={Link} to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+                        All in One Store
+                    </Typography>
                     {isMobile ? (
                         // Mobile version 
                         <>
