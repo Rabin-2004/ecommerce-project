@@ -1,12 +1,11 @@
-// src/App.jsx
 import React from 'react';
 import './App.css'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Updated import
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; 
 import { CartProvider } from './contexts/CartContext';
 import Navbar from './components/Navbar';
 import ProductList from './components/ProductList';
 import Cart from './components/Cart';
-import CategoryPage from './components/CategoryPage'; // Import the new CategoryPage component
+import CategoryPage from './components/CategoryPage';
 import Checkout from './components/Checkout';
 import OrderConfirmed from './components/OrderConfirmed';
 
@@ -18,7 +17,7 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<ProductList />} />
                     <Route path="/cart" element={<Cart />} />
-                    <Route path="/category/:category" element={<CategoryPage />} /> {/* New route for categories */}
+                    <Route path="/category/:category" element={<CategoryPage />} /> 
                     <Route path="/checkout" element={<Checkout />} />
                     <Route path="/order-confirmed" element={<OrderConfirmed />} />
                 </Routes>
