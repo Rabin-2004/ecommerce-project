@@ -1,13 +1,11 @@
-// src/components/Cart.jsx
 import React from 'react';
 import { useCart } from '../contexts/CartContext';
 import { Card, CardContent, Typography, CardMedia, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
-    const { cartItems, removeFromCart } = useCart(); // Ensure removeFromCart is available
+    const { cartItems, removeFromCart } = useCart();
 
-    // Calculate total price (fixed)
     const totalPrice = cartItems.reduce((acc, item) => acc + item.price, 0).toFixed(2);
 
     const navigate = useNavigate();
@@ -37,12 +35,10 @@ const Cart = () => {
                         </Card>
                     ))}
 
-                    {/* Total Price */}
                     <Typography variant="h6" style={{ marginTop: '20px' }}>
                         Total Price: ${totalPrice}
                     </Typography>
 
-                    {/* Order Button */}
                     <Button
                         variant="contained"
                         color="primary"

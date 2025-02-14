@@ -1,4 +1,3 @@
-// src/components/ProductCard.js
 import React from 'react';
 import { Card, CardContent, Typography, Button, CardMedia } from '@mui/material';
 import { useCart } from '../contexts/CartContext';  

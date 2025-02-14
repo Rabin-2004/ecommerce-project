@@ -1,4 +1,3 @@
-// src/components/ProductList.js
 import React, { useEffect, useState } from 'react';
 import { Grid} from '@mui/material';
 import { useCart } from '../contexts/CartContext';
