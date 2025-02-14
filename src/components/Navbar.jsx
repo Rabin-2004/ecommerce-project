@@ -75,6 +75,11 @@ const Navbar = () => {
                 ))}
                 <ListItem button component={Link} to="/cart" onClick={toggleDrawer}>
                     <ListItemText primary="Cart" />
+                    <IconButton color="inherit" component={Link} to="/cart">
+                                <Badge badgeContent={cartItems.length} color="error">
+                                <ShoppingCartIcon />
+                                </Badge>
+                            </IconButton>
                 </ListItem>
             </List>
         </Drawer>
