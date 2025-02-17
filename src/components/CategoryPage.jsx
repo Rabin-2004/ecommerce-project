@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Grid, Card, CardContent, Button, Typography, CardMedia } from '@mui/material';
 import { fetchCategoryProducts } from '../api/fakeStoreApi'; 
+import { useCart } from '../contexts/CartContext';
 
 const CategoryPage = () => {
     const { category } = useParams();  
     const [products, setProducts] = useState([]);
+    const addToCart = useCart();
 
     useEffect(() => {
         const getCategoryProducts = async () => {
@@ -38,7 +40,7 @@ const CategoryPage = () => {
                         WebkitLineClamp: 2 
                     }}> {product.title}</Typography>
                                 <Typography variant="body2" color="textSecondary">${product.price}</Typography>
-                                <Button variant="contained">Add to Cart</Button>
+                                <Button variant="contained" onClick={()=> addToCart(product)}>Add to Cart</Button>
                             </CardContent>
                         </Card>
                     </Grid>
