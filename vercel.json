@@ -1,0 +1,24 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "src/index.js",
+        "use": "@vercel/static-build"
+      }
+    ],
+    "headers": [
+      {
+        "source": "/(.*).(js|css|jpg|jpeg|png|gif|svg|ico|webp)$",  
+        "headers": {
+          "Cache-Control": "public, max-age=31536000, immutable"  
+        }
+      },
+      {
+        "source": "/api/(.*)",  
+        "headers": {
+          "Cache-Control": "no-store, no-cache, must-revalidate"  
+        }
+      }
+    ]
+  }
+  

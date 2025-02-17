@@ -20,14 +20,14 @@ const Checkout = () => {
         e.preventDefault();
 
         emailjs.send(
-            serviceID,  
-            templateID,  
+            serviceID,
+            templateID,
             {
                 to_email: formData.email,
                 user_name: formData.name,
                 phone_number: formData.phone,
             },
-            publicKey  
+            publicKey
         ).then(() => {
             setOrderConfirmed(true);
         }).catch((error) => {
@@ -41,38 +41,38 @@ const Checkout = () => {
                 <>
                     <Typography variant="h4" gutterBottom>Checkout</Typography>
                     <form onSubmit={handleSubmit}>
-                        <TextField 
-                            fullWidth 
-                            label="Name" 
-                            name="name" 
-                            value={formData.name} 
-                            onChange={handleChange} 
-                            required 
-                            margin="normal" 
+                        <TextField
+                            fullWidth
+                            label="Name"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                            margin="normal"
                         />
-                        <TextField 
-                            fullWidth 
-                            label="Email" 
-                            name="email" 
-                            type="email" 
-                            value={formData.email} 
-                            onChange={handleChange} 
-                            required 
-                            margin="normal" 
+                        <TextField
+                            fullWidth
+                            label="Email"
+                            name="email"
+                            type="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                            margin="normal"
                         />
-                        <TextField 
-                            fullWidth 
-                            label="Phone Number" 
-                            name="phone" 
-                            type="tel" 
-                            value={formData.phone} 
-                            onChange={handleChange} 
-                            required 
-                            margin="normal" 
+                        <TextField
+                            fullWidth
+                            label="Phone Number"
+                            name="phone"
+                            type="tel"
+                            value={formData.phone}
+                            onChange={handleChange}
+                            required
+                            margin="normal"
                         />
-                        <Button 
-                            type="submit" 
-                            variant="contained" 
+                        <Button
+                            type="submit"
+                            variant="contained"
                             color="primary"
                         >
                             Submit Order
@@ -83,9 +83,9 @@ const Checkout = () => {
                 <>
                     <Typography variant="h5" gutterBottom>Your Order Has Been Submitted</Typography>
                     <Typography variant="body1">A confirmation email has been sent to your email address.</Typography>
-                    <Button 
-                        variant="contained" 
-                        color="secondary" 
+                    <Button
+                        variant="contained"
+                        color="secondary"
                         onClick={() => navigate('/order-confirmed')}
                     >
                         Proceed to Order Confirmation
