@@ -7,7 +7,7 @@ import { useCart } from '../contexts/CartContext';
 const CategoryPage = () => {
     const { category } = useParams();  
     const [products, setProducts] = useState([]);
-    const addToCart = useCart();
+    const {addToCart} = useCart();
 
     useEffect(() => {
         const getCategoryProducts = async () => {
