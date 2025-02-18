@@ -101,6 +101,7 @@ const Navbar = () => {
                                 edge="end" 
                                 onClick={toggleDrawer} 
                                 style={{ position: 'absolute', right: 16 }}
+                                aria-label='Open menu'
                             >
                                 <MenuIcon />
                             </IconButton>
